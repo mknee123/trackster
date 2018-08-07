@@ -15,7 +15,7 @@ $(document).ready(function() {
   Append each "row" to the container in the body to display all tracks.
 */
 Trackster.renderTracks = function(tracks) {
-
+  
 };
 
 /*

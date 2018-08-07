@@ -43,3 +43,19 @@ body {
   color: rgb(35, 2, 63);
   cursor: pointer;
 }
+
+.attributes {
+  background-color: rgb(104, 0, 255);
+  color: rgb(255, 255, 255);
+}
+
+.tracks {
+  padding: .5em 0;
+  border-bottom: 1px solid rgb(204, 204, 204);
+  display: flex;
+  align-items: center;
+}
+
+.tracks .play-icon {
+  color: rgb(255, 0, 171);
+}
