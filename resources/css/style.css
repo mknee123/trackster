@@ -20,4 +20,26 @@ body {
   margin-bottom: 0;
   font-family: "Righteous", cursive;
   color: #ff00ab;
+  font-size:2.5rem;
+}
+
+.header input {
+  border-radius: 20px;
+  margin-right: .5rem;
+  color: rgb(191, 191, 191);
+}
+
+.header .fa-search {
+  padding: .45rem;
+  border-radius: 20px;
+  text-align: center;
+  background-color:rgb(255,102,204);
+  color: rgb(35, 2, 63);
+  transition: all ease .5s;
+}
+
+.header .fa-search:hover {
+  background-color: rgb(255,102,204, .5);
+  color: rgb(35, 2, 63);
+  cursor: pointer;
 }
