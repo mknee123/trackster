@@ -8,7 +8,8 @@ html {
 body {
   font-family: "Work Sans", sans-serif;
   line-height: 2.5;
-  color: rbr(74, 74, 74);
+  color: rgb(74, 74, 74);
+  background-color: rgb(35, 2, 63);
 }
 .header {
   padding: 2rem 1rem;
@@ -19,14 +20,23 @@ body {
   margin-top: 0;
   margin-bottom: 0;
   font-family: "Righteous", cursive;
-  color: #ff00ab;
+  color: rgb(225,0,171);
   font-size:2.5rem;
+}
+
+h1.site-title {
+  font-size: 2.95rem;
+  color:rgb(104, 0, 255);
+  transition: all ease .5s;
 }
 
 .header input {
   border-radius: 20px;
   margin-right: .5rem;
   color: rgb(191, 191, 191);
+}
+.header input:active {
+  color: rgb(74, 74, 74);
 }
 
 .header .fa-search {
@@ -44,6 +54,8 @@ body {
   cursor: pointer;
 }
 
+
+
 .attributes {
   background-color: rgb(104, 0, 255);
   color: rgb(255, 255, 255);
@@ -55,7 +67,11 @@ body {
   display: flex;
   align-items: center;
 }
+.tracks:hover {
+  background-color: rgb(239, 237, 242);
+  transition: all ease .5s;
+}
 
-.tracks .play-icon {
+.tracks .play-icon a {
   color: rgb(255, 0, 171);
 }

@@ -7,6 +7,13 @@ $(document).ready(function() {
   $('#search-button').click(function() {
     //console.log($('#search-input').val());
     Trackster.searchTracksByTitle($('#search-input').val());
+    $('h1').addClass('site-title');
+  });
+
+  $('#search-input').keydown(function(event) {
+    if(event.keyCode == 13) {
+      Trackster.searchTracksByTitle($('#search-input').val());
+    }
   });
 });
 
@@ -21,8 +28,8 @@ Trackster.renderTracks = function(tracks) {
     var track = tracks[i];
     var mediumAlbumArt = track.image[1]["#text"];
     var htmlTrackRow =
-      '<div class="row track">' +
-      '  <div class="col-xs-1 col-xs-offset-1 play-button">' +
+      '<div class="row tracks">' +
+      '  <div class="col-xs-1 col-xs-offset-1 play-icon">' +
       '    <a href="'+ track.url + '" target="_blank">' +
       '      <i class="fa fa-play-circle-o fa-2x"></i>' +
       '    </a>' +
@@ -30,7 +37,7 @@ Trackster.renderTracks = function(tracks) {
       '  <div class="col-xs-4">' + track.name + '</div>' +
       '  <div class="col-xs-2">' + track.artist + '</div>' +
       '  <div class="col-xs-2"><img src="' + mediumAlbumArt + '"/></div>' +
-      '  <div class="col-xs-2">' + track.listeners + '</div>' +
+      '  <div class="col-xs-2">' + numeral(track.listeners).format(0,0) + '</div>' +
       '</div>';
 
     $trackList.append(htmlTrackRow);
@@ -47,6 +54,7 @@ Trackster.searchTracksByTitle = function(title) {
       success: function(data) {
         console.log(data);
         Trackster.renderTracks(data.results.trackmatches.track);
+        $('h1').removeClass('site-title');
       }
     });
 };
