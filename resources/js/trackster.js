@@ -29,12 +29,14 @@ Trackster.renderTracks = function(tracks) {
     var mediumAlbumArt = track.image[1]["#text"];
     var htmlTrackRow =
       '<div class="row tracks">' +
-      '  <div class="col-xs-1 col-xs-offset-1 play-icon">' +
+      '  <div class="col-xs-1">' + track.streamable + '</div>' +
+      '  <div class="col-xs-1 play-icon">' +
       '    <a href="'+ track.url + '" target="_blank">' +
       '      <i class="fa fa-play-circle-o fa-2x"></i>' +
       '    </a>' +
       '  </div>' +
       '  <div class="col-xs-4">' + track.name + '</div>' +
+
       '  <div class="col-xs-2">' + track.artist + '</div>' +
       '  <div class="col-xs-2"><img src="' + mediumAlbumArt + '"/></div>' +
       '  <div class="col-xs-2">' + numeral(track.listeners).format(0,0) + '</div>' +
